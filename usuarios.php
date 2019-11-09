@@ -1,9 +1,9 @@
 <?php
     include('conexao.php');
 
-    include('verifica_login.php');
+    #include('verifica_login.php');
 
-    $query = "SELECT nome, login, perfil FROM usuarios";
+    $query = "SELECT * FROM usuarios";
 
     $result = mysqli_query($conexao, $query);
 
@@ -18,7 +18,7 @@
     if($row > 0) {
         do{
 ?>
-    <p><?=$array['nome']?> | <?=$array['login']?> <?=$array['perfil']?></p>
+    <p><?=$array['nome']?> | <?=$array['login']?> | <?=$array['perfil']?></p><br>
 <?php
         } while($array = mysqli_fetch_assoc($result));
     }
