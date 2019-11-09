@@ -4,7 +4,7 @@
     include('conexao.php');
 
     if(empty($_POST['usuario']) || empty($_POST['senha'])) {
-        header('Location: index.php');
+        header('Location: index.html');
         exit();
     }
 
@@ -19,7 +19,7 @@
 
     if($row == 1) {
         $_SESSION['usuario'] = $usuario;
-        header('Location: painel.php');
+        header('Location: home.php');
         exit();
     } else {
         $_SESSION['nao_autenticado'] = true;

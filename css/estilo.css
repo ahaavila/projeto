@@ -19,3 +19,8 @@
 #form-box input {
     font-size: large;
 }
+
+.rotulo {
+    font-weight: bold;
+    font-size: 10px;
+}
