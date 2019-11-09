@@ -24,7 +24,7 @@
     } else {
         $_SESSION['nao_autenticado'] = true;
         
-        header('Location: index.php');
+        header('Location: index.html');
         exit();
     }
         
