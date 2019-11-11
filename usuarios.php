@@ -14,13 +14,44 @@
     include('head.php');
     include('menu.php');
 ?>
+    
 <?php
     if($row > 0) {
-        do{
 ?>
-    <p><?=$array['nome']?> | <?=$array['login']?> | <?=$array['perfil']?></p><br>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope="col"></th>
+            <th scope="col">Nome</th>
+            <th scope="col">Login</th>
+            <th scope="col">Perfil</th>
+            <th scope="col">Editar</th>
+            </tr>
+        </thead>
+<?php
+        do{
+?>      
+
+        <tbody>
+            <tr>
+            <th scope="row"><?=$array['id']?></th>
+            <td><?=$array['nome']?></td>
+            <td><?=$array['login']?></td>
+            <td><?=$array['perfil']?></td>
+            <td>
+                <button class="btn btn-success">
+                    <a href="editar_usuario.php?id=<?=$array['id']?>">Editar<span class="glyphicon glyphicon-edit"></span></a>
+                </button>
+            </td>
+            </tr>
+        </tbody>
+    
+    
 <?php
         } while($array = mysqli_fetch_assoc($result));
+?> 
+        </table>
+<?php
     }
 ?>
 
