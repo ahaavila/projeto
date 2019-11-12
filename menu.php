@@ -16,7 +16,7 @@
                             <a href="usuarios.php">Usuários</a>
                         </li>
                         <li>
-                            <a href="#">Perfis</a>
+                            <a href="perfil.php">Perfis</a>
                         </li>
                         <li>
                             <a href="#">Page 3</a>

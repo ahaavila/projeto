@@ -1,10 +1,7 @@
 <?php
     include('conexao.php');
 
-    $query = "SELECT 
-                u.ID, u.nome, u.login, p.Descricao 
-              FROM usuarios u 
-                INNER JOIN perfis p ON p.IDPerfil = u.IDPerfil";
+    $query = "SELECT * FROM perfis";
 
     $result = mysqli_query($conexao, $query);
 
@@ -30,7 +27,7 @@
         </div>
         <div class="col-sm">
             <button type="button" class="btn btn-primary novo" aria-label="Novo">
-                <a href="cadastro.php"><i class="fa fa-plus-circle"></i>Novo</a>
+                <a href="novo_perfil.php"><i class="fa fa-plus-circle"></i>Novo</a>
             </button>
         </div>
     </div>    
@@ -42,10 +39,7 @@
         <thead>
             <tr>
             <th scope="col"></th>
-            <th scope="col">Nome</th>
-            <th scope="col">Login</th>
             <th scope="col">Perfil</th>
-            <th scope="col">Editar</th>
             </tr>
         </thead>
 <?php
@@ -54,18 +48,15 @@
 
         <tbody>
             <tr>
-            <th scope="row"><?=$array['ID']?></th>
-            <td><?=$array['nome']?></td>
-            <td><?=$array['login']?></td>
+            <th scope="row"><?=$array['IDPerfil']?></th>
             <td><?=$array['Descricao']?></td>
             <td>
-            
-            <button type="button" class="btn btn-default" aria-label="Editar">
-                <a href="editar_usuario.php?ID=<?=$array['ID']?>"><i class="fa fa-pencil-square-o"></i></a>
-            </button>
-            <button type="button" class="btn btn-default" aria-label="Apagar">
-            <a href="deletar_usuario.php?ID=<?=$array['ID']?>"><i class="fa fa-times"></i></a>
-            </button>
+                <button type="button" class="btn btn-default" aria-label="Editar">
+                    <a href="editar_perfil.php?IDPerfil=<?=$array['IDPerfil']?>"><i class="fa fa-pencil-square-o"></i></a>
+                </button>
+                <button type="button" class="btn btn-default" aria-label="Apagar">
+                    <a href="deletar_perfil.php?IDPerfil=<?=$array['IDPerfil']?>"><i class="fa fa-times"></i></a>
+                </button>
             </td>
             </tr>
         </tbody>
