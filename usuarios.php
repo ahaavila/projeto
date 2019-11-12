@@ -34,14 +34,18 @@
 
         <tbody>
             <tr>
-            <th scope="row"><?=$array['id']?></th>
+            <th scope="row"><?=$array['ID']?></th>
             <td><?=$array['nome']?></td>
             <td><?=$array['login']?></td>
             <td><?=$array['perfil']?></td>
             <td>
-                <button class="btn btn-success">
-                    <a href="editar_usuario.php?id=<?=$array['id']?>">Editar<span class="glyphicon glyphicon-edit"></span></a>
-                </button>
+            
+            <button type="button" class="btn btn-default" aria-label="Editar">
+                <a href="editar_usuario.php?ID=<?=$array['ID']?>"><i class="fa fa-pencil-square-o"></i></a>
+            </button>
+            <button type="button" class="btn btn-default" aria-label="Editar">
+            <a href="deletar_usuario.php?ID=<?=$array['ID']?>"><i class="fa fa-times"></i></a>
+            </button>
             </td>
             </tr>
         </tbody>
