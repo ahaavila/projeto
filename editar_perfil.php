@@ -17,7 +17,7 @@
 ?>
     <div id="form-container">
         <div class="panel" id="form-box">
-            <form action="atualizar_perfil.php" method="POST">
+            <form action="atualizar_perfil.php?IDPerfil=<?=$array['IDPerfil']?>" method="POST">
                 <h2 class="text-center">Editar Perfil</h2>
 
                 <div class="form-group">
@@ -29,48 +29,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="IDPerfil">Perfil</label>
+                    <label for="Descricao">Perfil</label>
+                    
                     <div class="input-group">
-                        <?php
-                            if($Descricao == 'Administrador') {
-                        ?>
-                                <select name="IDPerfil" class="form-control" id="IDPerfil" >
-                                    <option selected>Administrador</option>
-                                    <option>Gerente</option>
-                                    <option>Motorista</option>
-                                    <option>Teste</option>
-                                </select>
-                        <?php
-                            } elseif ($Descricao == 'Gerente'){
-                        ?>
-                                    <select name="IDPerfil" class="form-control" id="IDPerfil" >
-                                        <option>Administrador</option>
-                                        <option selected>Gerente</option>
-                                        <option>Motorista</option>
-                                        <option>Teste</option>
-                                    </select>
-                        <?php
-                                } elseif ($Descricao == 'Motorista') {
-                        ?>
-                                <select name="IDPerfil" class="form-control" id="IDPerfil" >
-                                    <option>Administrador</option>
-                                    <option>Gerente</option>
-                                    <option selected>Motorista</option>
-                                    <option>Teste</option>
-                                </select>
-                        <?php
-                            } else {
-                        ?>
-                                <select name="IDPerfil" class="form-control" id="IDPerfil" >
-                                    <option>Administrador</option>
-                                    <option>Gerente</option>
-                                    <option>Motorista</option>
-                                    <option selected>Teste</option>
-                                </select>
-                        <?php
-                            }
-                        ?>
-                        
+                       <input type="text" name="Descricao" class="form-control" value="<?=$Descricao?>"/>
                     </div>
                 </div>
 

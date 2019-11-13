@@ -11,10 +11,11 @@
 
     
 
-    $query = "UPDATE usuarios SET(login,senha,nome,email,IDPerfil) = ('{$usuario}','{$senha}','{$nome}','{$email}','{$perfil}') WHERE ID = $id";
+    $query = "UPDATE usuarios SET login = '{$usuario}', senha = '{$senha}', nome = '{$nome}', email = '{$email}',
+        IDPerfil = '{$perfil}' WHERE ID = $id";
 
     $result = mysqli_query($conexao, $query);
 
-    header('Location: cadastro.php');
+    header('Location: usuarios.php');
 
 ?>
